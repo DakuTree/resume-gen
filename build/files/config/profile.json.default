@@ -22,6 +22,9 @@
 	],
 
 	"social" : {
+		"email" : "",
 		"twitter" : ""
+		// "linkedin" : "",
+		// "facebook" : ""
 	}
 }

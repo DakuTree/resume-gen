@@ -240,6 +240,9 @@ module.exports = function(grunt){
 		if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { age--; }
 		jsonProfile.age = age;
 
+		//create reversed email var
+		jsonProfile.social.email_reversed = (jsonProfile.social.email).split('').reverse().join('');
+
 		//make sure url doesn't end with slash
 		jsonSettings.base_url = (jsonSettings.base_url.slice(-1) == '/' ? jsonSettings.base_url.substr(0, -1) : jsonSettings.base_url);
 

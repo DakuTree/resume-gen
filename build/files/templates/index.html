@@ -227,34 +227,37 @@
 		<div class="background-gray">
 			<div id="contact" class="container">
 				<h2>Contact</h2>
-				<p class="lead">&ldquo;If I had asked people what they wanted, they would have said faster horses. &rdquo;<br />- Henry Ford</p>
+				<!--<p class="lead">&ldquo;If I had asked people what they wanted, they would have said faster horses. &rdquo;<br />- Henry Ford</p>-->
 
 				<hr />
 
 				<div class="row">
+					<!-- @if resumeProfile.social.email !== '' -->
 					<div class="col-md-6">
 						<ul class="no-bullets">
 							<li>
-								<a href="http://twitter.com/avareei" target="_blank"><span class="icon icon-twitter"></span>http://twitter.com/avareei</a>
-							</li>
-							<li>
-								<a href="" target="_blank"><span class="icon icon-linkedin"></span></a>
+								<a href="mailto:<!-- @echo resumeProfile.social.email -->"><span class="icon icon-email"></span><span style="unicode-bidi:bidi-override; direction: rtl;"><!-- @echo resumeProfile.social.email_reversed --></span></a>
 							</li>
 						</ul>
 					</div>
+					<!-- @endif -->
+					<!-- @if resumeProfile.social.twitter !== '' -->
 					<div class="col-md-6">
 						<ul class="no-bullets">
 							<li>
-								<a href="javascript:void(0);"><span class="icon icon-skype"></span>TEXT</a>
-							</li>
-							<li>
-								<a href="mailto:ten.uminaedoc@notsnhoj.sugna"><span class="icon icon-email"></span><span style="unicode-bidi:bidi-override; direction: rtl;">ten.uminaedoc@notsnhoj.sugna</span></a>
+								<a href="http://twitter.com/<!-- @echo resumeProfile.social.twitter -->" target="_blank"><span class="icon icon-twitter"></span>http://twitter.com/<!-- @echo resumeProfile.social.twitter --></a>
 							</li>
 						</ul>
 					</div>
+					<!-- @endif -->
+					<!-- TODO: Allow for additional social links -->
 				</div>
 			</div>
 		</div>
+
+		<!-- TODO: Footer with creation notes -->
+
+		<!-- END OF PAGE -->
 
 		<div class="modal fade" id="upgrade-dialog" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
