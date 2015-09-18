@@ -229,8 +229,16 @@ module.exports = function(grunt){
 		var jsonSettings = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/settings.json")));
 		var jsonProfile  = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/profile.json")));
 
-		//create full_name setting
+		//create full_name var
 		jsonProfile.full_name = (jsonProfile.first_name + (jsonSettings.use_middle_name ? " "+jsonProfile.middle_name+" " : " ") + jsonProfile.last_name);
+
+		//create age var
+		var today = new Date(),
+		    birthDate = new Date(jsonProfile.dateofbirth);
+		var age = today.getFullYear() - birthDate.getFullYear();
+		var m = today.getMonth() - birthDate.getMonth();
+		if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { age--; }
+		jsonProfile.age = age;
 
 		//make sure url doesn't end with slash
 		jsonSettings.base_url = (jsonSettings.base_url.slice(-1) == '/' ? jsonSettings.base_url.substr(0, -1) : jsonSettings.base_url);

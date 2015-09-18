@@ -1,5 +1,27 @@
 {
 	"first_name"  : "",
 	"middle_name" : "",
-	"last_name"   : ""
+	"last_name"   : "",
+
+	"biography" : "", //used for about me
+	"dateofbirth" : "YYYY/MM/DD",
+
+	"location" : "",
+
+	"educations" : [
+		// {
+			// "title" : "",
+			// "specification" : "",
+			// "location" : "",
+			// "level" : "",
+			// "description" : "",
+			// "start_date" : "XXXX-XX-XX",
+			// "end_date" : "XXXX-XX-XX",
+			// "completed" : true
+		// }
+	],
+
+	"social" : {
+		"twitter" : ""
+	}
 }
