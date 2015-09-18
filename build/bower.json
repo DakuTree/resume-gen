@@ -7,7 +7,8 @@
 		"normalize-css": "~3",
 		"html5bp": "git@github.com:h5bp/html5-boilerplate.git",
 
-		"jquery": "1.11.3"
+		"jquery": "1.11.3",
+		"bootstrap": "3.3.5"
 	},
 	"exportsOverride": {
 		"html5shiv": {
@@ -25,6 +26,10 @@
 		},
 		"jquery": {
 			"../js/": "dist/jquery.js"
+		},
+		"bootstrap": {
+			"../js/":  "dist/js/bootstrap.js",
+			"../css/": "dist/css/bootstrap.css"
 		}
 	}
 }
