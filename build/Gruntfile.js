@@ -229,7 +229,8 @@ module.exports = function(grunt){
 		var jsonSettings = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/settings.json")));
 		var jsonProfile  = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/profile.json")));
 
-		console.log(jsonSettings);
+		jsonProfile.full_name = (jsonProfile.first_name + (jsonSettings.use_middle_name ? " "+jsonProfile.middle_name+" " : " ") + jsonProfile.last_name);
+		console.log(jsonProfile.full_name);
 
 		grunt.config.set('preprocess.options.context.resumeSettings', jsonSettings);
 		grunt.config.set('preprocess.options.context.resumeProfile',  jsonProfile);
