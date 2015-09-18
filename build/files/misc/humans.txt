@@ -6,8 +6,10 @@
 	Angus Johnston (also known as Daku / DakuTree, Avareei) -- Creator/Admin -- @Avareei
 
 # THANKS
+	https://github.com/pascalvgemert/resume - Used the design here as a base.
 
 # TECHNOLOGY COLOPHON
 
 	HTML5, CSS3
 	Modernizr, LESS
+	Grunt
