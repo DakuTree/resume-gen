@@ -1,0 +1,13 @@
+#ignore
+node_modules
+npm-debug.log
+
+build/files/vendor/css/*
+build/files/vendor/js/*
+
+#temp ignore
+dev/
+prod/
+
+
+#allow

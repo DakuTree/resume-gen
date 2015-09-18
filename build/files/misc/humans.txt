@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Angus Johnston (also known as Daku / DakuTree, Avareei) -- Creator/Admin -- @Avareei
+
+# THANKS
+
+# TECHNOLOGY COLOPHON
+
+	HTML5, CSS3
+	Modernizr, LESS
