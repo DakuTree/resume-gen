@@ -229,8 +229,11 @@ module.exports = function(grunt){
 		var jsonSettings = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/settings.json")));
 		var jsonProfile  = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/profile.json")));
 
+		//create full_name setting
 		jsonProfile.full_name = (jsonProfile.first_name + (jsonSettings.use_middle_name ? " "+jsonProfile.middle_name+" " : " ") + jsonProfile.last_name);
-		console.log(jsonProfile.full_name);
+
+		//make sure url doesn't end with slash
+		jsonSettings.base_url = (jsonSettings.base_url.slice(-1) == '/' ? jsonSettings.base_url.substr(0, -1) : jsonSettings.base_url);
 
 		grunt.config.set('preprocess.options.context.resumeSettings', jsonSettings);
 		grunt.config.set('preprocess.options.context.resumeProfile',  jsonProfile);
