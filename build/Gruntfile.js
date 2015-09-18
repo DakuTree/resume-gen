@@ -38,6 +38,7 @@ module.exports = function(grunt){
 				'./files/main.less',
 				'./files/main.js',
 				'./files/templates/**/*',
+				'./files/config/*'
 			],
 			tasks: ['default'],
 		},
@@ -110,9 +111,7 @@ module.exports = function(grunt){
 					production: '<%= pkg.production %>',
 					title: '<%= pkg.title %>',
 					ver: '<%= ver %>',
-					version: '<%= pkg.version %>',
-
-					google_analytics_id: "'UA-30896979-1'"
+					version: '<%= pkg.version %>'
 				},
 			},
 
@@ -221,7 +220,22 @@ module.exports = function(grunt){
 
 	//----------------------------------
 
-	grunt.registerTask('init', []);
+	grunt.registerTask('load_config', 'Load config files', function(name, val) {
+		var stripJsonComments = require("strip-json-comments");
+		var jsonlint = require("jsonlint");
+
+		//TODO: Error checking.
+
+		var jsonSettings = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/settings.json")));
+		var jsonProfile  = jsonlint.parse(stripJsonComments(grunt.file.read("files/config/profile.json")));
+
+		console.log(jsonSettings);
+
+		grunt.config.set('preprocess.options.context.resumeSettings', jsonSettings);
+		grunt.config.set('preprocess.options.context.resumeProfile',  jsonProfile);
+	});
+
+	grunt.registerTask('init', ['load_config']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
