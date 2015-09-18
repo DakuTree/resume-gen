@@ -28,8 +28,9 @@
 			"../js/": "dist/jquery.js"
 		},
 		"bootstrap": {
-			"../js/":  "dist/js/bootstrap.js",
-			"../css/": "dist/css/bootstrap.css"
+			"../js/":   "dist/js/bootstrap.js",
+			"../css/":  "dist/css/bootstrap.css",
+			"../fonts/": "dist/fonts/glyphicons-halflings-regular.*"
 		}
 	}
 }
