@@ -29,7 +29,7 @@
 					<li class="active"><a href="#profile">Profile</a></li>
 					<li><a href="#experiences">Experiences</a></li>
 					<li><a href="#abilities">Abilities</a></li>
-					<li><a href="#projects">Projects</a></li>
+					<!-- @if resumeProfile.projects.length > 0 --><li><a href="#projects">Projects</a></li><!-- @endif -->
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -38,7 +38,7 @@
 		<div class="background-white">
 			<div id="profile" class="container">
 				<h2>Profile</h2>
-				<p class="lead">I&#039;m a creative PHP webdeveloper</p>
+				<!--<p class="lead">I&#039;m a creative PHP webdeveloper</p>-->
 
 				<hr />
 
@@ -73,7 +73,7 @@
 
 		<div id="experiences" class="container">
 			<h2>Experiences</h2>
-			<p class="lead">&ldquo;Protons give an atom its identity, electrons its personality.&rdquo;<br />- Bill Bryson, A short history of nearly everything</p>
+			<!--<p class="lead">&ldquo;Protons give an atom its identity, electrons its personality.&rdquo;<br />- Bill Bryson, A short history of nearly everything</p>-->
 
 			<hr />
 
@@ -96,24 +96,21 @@
 					</div>
 				</div>
 			</div>
+
+			<hr />
+
+			<h3>Careers</h3>
+			<!--TODO: Get career example-->
+			<div class="alert alert-warning">
+				No careers were found in this resume
+			</div>
 		</div>
 
-		<hr />
-
-		<h3>Careers</h3>
-		<!--TODO: Get career example-->
-		<div class="alert alert-warning">
-			No careers were found in this resume
-		</div>
-
-		</div>
 
 		<div class="background-white">
 			<div id="abilities" class="container">
 				<h2>Abilities</h2>
-				<p class="lead">
-					&ldquo;Life without knowledge is death in disguise.&rdquo;<br />- Talib Kweli
-				</p>
+				<!--<p class="lead">&ldquo;Life without knowledge is death in disguise.&rdquo;<br />- Talib Kweli</p>-->
 
 				<hr />
 
@@ -135,11 +132,6 @@
 							</li>
 						</ul>
 					</div>
-				</div>
-
-				<div class="text-center project-referal">
-					<p>This project is build on a custom made PHP framework.</p>
-					<a href="https://github.com/pascalvgemert/resume" class="btn btn-primary" target="_blank">See project on Github</a>
 				</div>
 
 				<hr />
@@ -198,30 +190,39 @@
 			</div>
 		</div>
 
-
+		<!-- @if resumeProfile.projects.length > 0 -->
 		<div id="projects" class="container">
 			<h2>Projects</h2>
-			<p class="lead">&ldquo;You can do anything you set your mind to.&rdquo;<br />- Benjamin Franklin</p>
+			<!--<p class="lead">&ldquo;You can do anything you set your mind to.&rdquo;<br />- Benjamin Franklin</p>-->
 
 			<hr />
 
-			<div class="row">
+			<!-- TODO: Generate rows -->
+			<!--<div class="row">
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<figure class="effect">
-						<img src="assets/img/project_mals.jpg" alt="Mals" />
+						<img src="assets/img/project_img600x400.jpg" alt="Name" />
 
 						<figcaption>
-							<h3>Mals</h3>
-							<p>Mals, a creative agency located in Rotterdam.</p>
-							<p><strong>Tags:</strong> <br />Development, Wordpress, Bootstrap</p>
-							<a href="http://studiomals.com" target="_blank">View more</a>
+							<h3>Project Name</h3>
+							<p>Project Description</p>
+							<p><strong>Tags:</strong> <br />foo, bar</p>
+							<a href="http://linktoproject" target="_blank">View more</a> 
 							<span class="icon">
 								<span class="glyphicon glyphicon-new-window"></span>
 							</span>
 						</figcaption> 
 					</figure>
 				</div>
-			</div>
+			</div>-->
+		</div>
+		<!-- @endif -->
+
+
+
+		<div class="text-center project-referal">
+			<p>This project is build on a custom made PHP framework.</p>
+			<a href="https://github.com/pascalvgemert/resume" class="btn btn-primary" target="_blank">See project on Github</a>
 		</div>
 
 		<div class="background-gray">
