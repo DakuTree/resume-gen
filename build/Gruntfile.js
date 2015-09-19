@@ -108,7 +108,8 @@ module.exports = function(grunt){
 					// }
 				},
 				files: {
-					"./files/templates/partials/education.html": "./files/templates/partials/education.jade"
+					"./files/templates/partials/education.html" : "./files/templates/partials/education.jade",
+					"./files/templates/partials/career.html"    : "./files/templates/partials/career.jade",
 				}
 			}
 		},
