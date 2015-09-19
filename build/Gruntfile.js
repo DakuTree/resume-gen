@@ -98,6 +98,21 @@ module.exports = function(grunt){
 			}
 		},
 
+		/*----------------------------------(    JADE    )----------------------------------*/
+		jade: {
+			compile: {
+				options: {
+					pretty: '\t'
+					// data: {
+						// debug: false
+					// }
+				},
+				files: {
+					"./files/templates/partials/education.html": "./files/templates/partials/education.jade"
+				}
+			}
+		},
+
 		/*----------------------------------( PREPROCESS )----------------------------------*/
 
 		preprocess: {
@@ -207,6 +222,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-preprocess');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	//----------------------------------
@@ -248,11 +264,15 @@ module.exports = function(grunt){
 
 		grunt.config.set('preprocess.options.context.resumeSettings', jsonSettings);
 		grunt.config.set('preprocess.options.context.resumeProfile',  jsonProfile);
+
+		//FIXME: preprocess has extremely shoddy @foreach support, so we need to use jade instead :|
+		grunt.config.set('jade.options.data.resumeSettings', jsonSettings);
+		grunt.config.set('jade.options.data.resumeProfile',  jsonProfile);
 	});
 
 	grunt.registerTask('init', ['load_config']);
 	grunt.registerTask('update', ['bower', 'rename']);
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'jade:compile', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
 	grunt.registerTask('default', ['dev']);
 };

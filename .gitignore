@@ -6,6 +6,8 @@ build/files/vendor/css/*
 build/files/vendor/js/*
 build/files/vendor/fonts/*
 
+build/files/templates/partials/*.html
+
 build/files/config/profile.json
 build/files/config/settings.json
 
