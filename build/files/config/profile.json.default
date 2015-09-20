@@ -21,7 +21,6 @@
 		// }
 	],
 
-
 	"careers" : [
 		// {
 			// "title": "",
@@ -32,6 +31,15 @@
 			// "start_date": "YYYY-MM-DD",
 			// "end_date": null,
 			// "link": ""
+		// }
+	],
+
+	"skills" : [
+		// {
+			// "title" : "",
+			// "level" : 5,
+			// "level_detailed" : 10,
+			// "note" : ""
 		// }
 	],
 
