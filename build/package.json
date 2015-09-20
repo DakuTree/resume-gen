@@ -15,6 +15,9 @@
 		"grunt-env" : "latest",
 		"grunt-contrib-compress" : "latest",
 
+		"grunt-ftpush" : "latest",
+		"grunt-open" : "latest",
+
 		"grunt-preprocess" : "latest",
 		"grunt-contrib-jade" : "latest",
 
