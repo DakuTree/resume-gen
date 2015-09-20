@@ -111,6 +111,8 @@ module.exports = function(grunt){
 					"./files/templates/partials/education.html" : "./files/templates/partials/education.jade",
 					"./files/templates/partials/career.html"    : "./files/templates/partials/career.jade",
 					"./files/templates/partials/skills.html"    : "./files/templates/partials/skills.jade",
+					"./files/templates/partials/languages.html" : "./files/templates/partials/languages.jade",
+					"./files/templates/partials/tools.html"     : "./files/templates/partials/tools.jade",
 				}
 			}
 		},

@@ -43,6 +43,24 @@
 		// }
 	],
 
+	"languages" : [
+		// {
+			// "title" : "",
+			// "level" : 5,
+			// "level_detailed" : 10,
+			// "note" : ""
+		// }
+	],
+
+	"tools" : [
+		// {
+			// "title" : "",
+			// "level" : 5,
+			// "level_detailed" : 10,
+			// "note" : ""
+		// }
+	],
+
 	"projects" : [
 	],
 
