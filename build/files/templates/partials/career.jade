@@ -12,12 +12,12 @@ div(class="experiences")
 					span(class="hidden-phone")= career.description
 					span(class="experience-details")
 						span(class="location")
-							span(class="glyphicon glyphicon-map-marker")/
+							span(class="glyphicon glyphicon-map-marker")
 							= career.location
 						- if(career.link) {
 						span(class="seperator") |
 						span(class="link")
-							span(class="glyphicon glyphicon-link")/
+							span(class="glyphicon glyphicon-link")
 							a(href=career.link, target="_blank") career.link
 						- }
 - } else {
