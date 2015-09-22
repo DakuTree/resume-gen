@@ -3,6 +3,7 @@ This is a html resume generator built with grunt.
 
 ## how to use
 (Using build/ as root dir)
+
 1. RUN: "npm install" (Install grunt modules)
 2. RUN: "grunt setup" (Setup user files & get libs via bower)
 3. Edit .ftppass, files/config/profile.json & files/config/settings.json with your own settings.
