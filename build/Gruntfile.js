@@ -98,6 +98,23 @@ module.exports = function(grunt){
 			}
 		},
 
+		/*----------------------------------(    UGLIFY  )----------------------------------*/
+		uglify: {
+			prod: {
+				files: [{
+						"../prod/assets/main.js" : "files/main.js"
+					},
+					{
+						expand: true,
+						cwd: 'files/vendor/js/',
+						src: '*.js',
+						dest: './files/vendor/js/',
+						ext:  '.min.js'
+					}
+				]
+			}
+		},
+
 		/*----------------------------------(    JADE    )----------------------------------*/
 		jade: {
 			compile: {
@@ -198,7 +215,8 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'img/*.*',
-							'vendor/**/*.min.*'
+							'vendor/**/*.min.*',
+							'vendor/fonts/*'
 							//'main.css' //main.css already exists in prod
 						],
 						dest: '../prod/assets/'
@@ -249,6 +267,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -342,7 +361,7 @@ module.exports = function(grunt){
 	
 
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'jade:compile', 'preprocess:dev', 'copy:dev']);
-	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
+	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'uglify:prod', 'preprocess:prod', 'copy:prod']);
 
 	grunt.registerTask('deploy', ['prod', 'ftpush', 'open:prod']);
 	grunt.registerTask('default', ['dev']);
