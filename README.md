@@ -7,9 +7,11 @@ This is a html resume generator built with grunt.
 1. RUN: "npm install" (Install grunt modules)
 2. RUN: "grunt setup" (Setup user files & get libs via bower)
 3. Edit .ftppass, files/config/profile.json & files/config/settings.json with your own settings.
-4. RUN: grunt prod (Generate page)
-5. Your generated resume should now be found in ../prod.
-6. <OPTIONAL> RUN: "grunt deploy" (This deploys your website via FTP to the location specified in settings.json)
+4. Replace files/img/profilePhoto.jpg with your own photo (size: 246x246)
+5. RUN: grunt prod (Generate page)
+6. Your generated resume should now be found in ../prod.
+7. <OPTIONAL> RUN: "grunt deploy" (This deploys your website via FTP to the location specified in settings.json)
+
 
 ##thanks
 Design is based on resume by Pascal van Gemert - https://github.com/pascalvgemert/resume  
