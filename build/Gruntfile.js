@@ -293,7 +293,7 @@ module.exports = function(grunt){
 		jsonSettings.base_url = (jsonSettings.base_url.slice(-1) == '/' ? jsonSettings.base_url.substr(0, -1) : jsonSettings.base_url);
 
 		//ftp settings
-		grunt.config.set('open.prod.path', jsonSettings.base_url);
+		grunt.config.set('open.prod.path',         jsonSettings.base_url);
 		grunt.config.set('ftpush.build.auth.host', jsonSettings.ftp_host);
 		grunt.config.set('ftpush.build.auth.port', jsonSettings.ftp_port);
 		grunt.config.set('ftpush.build.dest',      jsonSettings.ftp_dest);
@@ -306,10 +306,44 @@ module.exports = function(grunt){
 		grunt.config.set('jade.options.data.resumeProfile',  jsonProfile);
 	});
 
+
+	grunt.registerTask('initial_setup', 'Setup', function(name, val) {
+		//initial setup, or used to reset settings
+
+		if(grunt.file.exists(".ftppass") || grunt.file.exists("files/config/profile.json") || grunt.file.exists("files/config/settings.json")) {
+			grunt.warn(".ftpass, profile.json or settings.json already exist.\nUsing force will overwrite them.\n");
+		}
+
+		var ftppassBaseFile = ".ftppass.default";
+		if(grunt.file.exists(".ftppass.custom")) {
+			ftppassBaseFile = ".ftppass.custom";
+		}
+		grunt.file.copy(ftppassBaseFile, ".ftppass");
+
+		var profileBaseFile = "files/config/profile.json.default";
+		if(grunt.file.exists("files/config/profile.json.custom")) {
+			profileBaseFile = "files/config/profile.json.custom";
+		}
+		grunt.file.copy(profileBaseFile, "files/config/profile.json");
+
+		var settingsBaseFile = "files/config/settings.json.default";
+		if(grunt.file.exists("files/config/settings.json.custom")) {
+			settingsBaseFile = "files/config/settings.json.custom";
+		}
+		grunt.file.copy(settingsBaseFile, "files/config/settings.json");
+
+		grunt.log.writeln("\n.ftppass, profile.json & settings.json are now ready to be editted.");
+	});
+
+	//main tasks
 	grunt.registerTask('init', ['load_config']);
 	grunt.registerTask('update', ['bower', 'rename']);
+	grunt.registerTask('setup', ['initial_setup', 'update']);
+	
+
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'jade:compile', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
+
 	grunt.registerTask('deploy', ['prod', 'ftpush', 'open:prod']);
 	grunt.registerTask('default', ['dev']);
 };
