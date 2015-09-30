@@ -1,4 +1,4 @@
-# html resume generator
+# resume generator
 This is a html resume generator built with grunt.
 
 ## how to use
@@ -12,7 +12,11 @@ This is a html resume generator built with grunt.
 6. Your generated resume should now be found in ../prod.
 7. <OPTIONAL> RUN: "grunt deploy" (This deploys your website via FTP to the location specified in settings.json)
 
+## misc
+Originally wrote this after finding out the original project wasn't exactly easy to customize. It outputs more or less the exactly the same HTML as the PHP version, with some odd changes here and there.  
 
-##thanks
-Design is based on resume by Pascal van Gemert - https://github.com/pascalvgemert/resume  
+Personally I've moved to using careers.stackoverflow, but maybe someone will find some use for this :)
+
+## thanks
+Design is taken from resume by Pascal van Gemert - https://github.com/pascalvgemert/resume  
 Further thanks @ [humans.txt](build/files/misc/humans.txt).
