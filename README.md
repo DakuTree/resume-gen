@@ -13,9 +13,7 @@ This is a html resume generator built with grunt.
 7. <OPTIONAL> RUN: "grunt deploy" (This deploys your website via FTP to the location specified in settings.json)
 
 ## misc
-Originally wrote this after finding out the original project wasn't exactly easy to customize. It outputs more or less the exactly the same HTML as the PHP version, with some odd changes here and there.  
-
-Personally I've moved to using careers.stackoverflow, but maybe someone will find some use for this :)
+Originally wrote this after finding out the original project wasn't exactly easy to customize. It outputs more or less the exactly the same HTML as the PHP version, with some odd changes here and there.
 
 ## thanks
 Design is taken from resume by Pascal van Gemert - https://github.com/pascalvgemert/resume  
