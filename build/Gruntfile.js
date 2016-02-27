@@ -358,7 +358,6 @@ module.exports = function(grunt){
 	grunt.registerTask('init', ['load_config']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('setup', ['initial_setup', 'update']);
-	
 
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'jade:compile', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'uglify:prod', 'preprocess:prod', 'copy:prod']);
