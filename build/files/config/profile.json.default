@@ -72,8 +72,9 @@
 	],
 
 	"social" : {
-		"email" : "",
-		"twitter" : ""
+		"email"   : "",
+		"twitter" : "",
+		"github"  : ""
 		// "linkedin" : "",
 		// "facebook" : ""
 	}

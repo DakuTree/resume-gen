@@ -63,8 +63,12 @@
 						</p>
 
 						<!-- @if resumeProfile.social.twitter !== '' -->
-						<a href="https://twitter.com/<!-- @echo resumeProfile.social.twitter -->" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @<!-- @echo resumeProfile.social.twitter --></a>
+						<a href="https://twitter.com/<!-- @echo resumeProfile.social.twitter -->" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="true">Follow @<!-- @echo resumeProfile.social.twitter --></a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						<!-- @endif -->
+						<!-- @if resumeProfile.social.github !== '' -->
+						<a class="github-button" href="https://github.com/<!-- @echo resumeProfile.social.github -->" aria-label="Follow @<!-- @echo resumeProfile.social.github --> on GitHub">Follow @<!-- @echo resumeProfile.social.github --></a>
+						<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 						<!-- @endif -->
 					</div>
 				</div>
